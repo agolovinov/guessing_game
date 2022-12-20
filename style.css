@@ -1,0 +1,197 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 1px;
+    background: #f1f1f1;
+    color: #0f141e;
+    margin: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding-top: 30px;
+    background-color: whitesmoke;
+}
+
+.game-card {
+    height: 100vh;
+    font-family: inherit;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type=number] {
+    display: flex;
+    padding: 10px;
+    margin: 10px 0;
+    border: 0;
+    box-shadow: 0 0 15px 4px rgba(0,0,0,0.06);
+    border-radius: 10px;
+    width: 30%;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.form-group {
+    display: inline-block;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14;
+    text-align: center;
+}
+
+.form-group input {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin-left: 80px;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+
+.form h3 h4 {
+    margin-top: 20px;
+    width: 200px;
+}
+
+.form h3 h4 p {
+    text-align: center;
+
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0px;
+}
+
+.maxi {
+    margin-left: 20px;
+}
+
+.mini {
+    margin-right: 20px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: -400px;
+    width: 500px;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+}
+
+.no-gutters {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    width: 700px;
+    margin-top: 0px;
+    border: 0;
+    box-shadow: 0 0 15px 4px rgba(0,0,0,0.06);
+    background-color: rgb(252, 234, 234);
+}
+
+.col {
+    width: 500px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.card-title {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    width: 300px;    
+}
+
+#answerField {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+    height: 80px;
+}
+
+.btn-group .card-footer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    display: inline-flexbox;
+}
+
+.btn {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+    letter-spacing: inherit;
+    background-color: rgb(222, 233, 226);
+    width: 120px;
+    height: auto;
+    border-radius: 10px;
+    color: #0f141e;
+    margin-top: 20px;
+    display: inline-block;
+    text-align: center;
+    align-items:stretch;
+    cursor: grab;
+    margin: 20px 0px;
+    padding: 10px 6px;
+    border: 0;
+    box-shadow: 0 0 15px 4px rgba(0,0,0,0.06);
+}
