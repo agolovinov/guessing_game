@@ -22,4 +22,4 @@
 
 ## Как открыть/запустить
 
-Для запуска - кликнуть [по этой ссылке](https://agolovinov.github.io/guessins_game/).
+Для запуска - кликнуть [по этой ссылке](https://agolovinov.github.io/guessing_game/).
