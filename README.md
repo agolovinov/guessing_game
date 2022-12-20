@@ -12,7 +12,6 @@
 
 * JavaScript
 
-* Web-fonts (Roboto).
 
 ## Правила игры.
 
