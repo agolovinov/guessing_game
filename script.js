@@ -110,7 +110,6 @@ numberInputMax.addEventListener("change", (event) => {
         orderNumber++;
         orderNumberField.innerText = orderNumber;
         answerField.innerText = `Судя по введённым числам, Вы загадали число ${answerNumberPrint } ?`;
-        gameRun = true;
         compare();
     }
 })
@@ -124,128 +123,127 @@ let answerNumberValue;
 let str;
 
 function compare() {
-const compare = ((Math.abs(answerNumber) >= 10) && (Math.abs(answerNumber) < 20)) ? extraValue() : findAnswerNumber();
+const compare = Math.abs(answerNumber) >= 10 && Math.abs(answerNumber) < 20 ? extraValue() : findAnswerNumber();
 }
 
 function findAnswerNumber() {
-
-const b = Math.floor(Math.abs(answerNumber % 10));
-switch (b) {
-    case 1:
-        units = 'один';
-        break;
-    case 2:
-        units = 'два';
-        break;
-    case 3:
-        units = 'три';
-        break;
-    case 4:
-        units = 'четыре';
-        break;
-    case 5:
-        units = 'пять';
-        break;
-    case 6:
-        units = 'шесть';
-        break;
-    case 7:
-        units = 'семь';
-        break;
-    case 8:
-        units = 'восемь';
-        break;
-    case 9:
-        units = 'девять';
-        break;
-    default:
-        units = '';
+    const b = Math.floor(Math.abs(answerNumber % 10));
+    switch (b) {
+        case 1:
+            units = 'один';
+            break;
+        case 2:
+            units = 'два';
+            break;
+        case 3:
+            units = 'три';
+            break;
+        case 4:
+            units = 'четыре';
+            break;
+        case 5:
+            units = 'пять';
+            break;
+        case 6:
+            units = 'шесть';
+            break;
+        case 7:
+            units = 'семь';
+            break;
+        case 8:
+            units = 'восемь';
+            break;
+        case 9:
+            units = 'девять';
+            break;
+        default:
+            units = '';
     }
 
-const c = Math.floor((Math.abs(answerNumber) % 100) / 10);
-switch (c) {
-    case 1:
-        tens = '';
-        break;
-	case 2:
-		tens = 'двадцать ';
-		break;
-	case 3:
-		tens = 'тридцать ';
-		break;
-	case 4:
-		tens = 'сорок ';
-		break;
-    case 5:
-		tens = 'пятьдесят ';
-		break;
-	case 6:
-		tens = 'шестьдесят ';
-		break;
-    case 7:
-		tens = 'семьдесят ';
-		break;
-	case 8:
-		tens = 'восемьдесят ';
-		break;
-	case 9:
-		tens = 'девяносто ';
-		break;
-	default:
-		tens = '';
-} 
+    const c = Math.floor((Math.abs(answerNumber) % 100) / 10);
+    switch (c) {
+        case 1:
+            tens = '';
+            break;
+        case 2:
+            tens = 'двадцать ';
+            break;
+        case 3:
+            tens = 'тридцать ';
+            break;
+        case 4:
+            tens = 'сорок ';
+            break;
+        case 5:
+            tens = 'пятьдесят ';
+            break;
+        case 6:
+            tens = 'шестьдесят ';
+            break;
+        case 7:
+            tens = 'семьдесят ';
+            break;
+        case 8:
+            tens = 'восемьдесят ';
+            break;
+        case 9:
+            tens = 'девяносто ';
+            break;
+        default:
+            tens = '';
+    } 
 
-const d = Math.floor(Math.abs(answerNumber) / 100);
-switch (d) {
-	case 1:
-		hundreds = 'сто ';
-		break;
-	case 2:
-		hundreds = 'двести ';
-		break;
-	case 3:
-		hundreds = 'триста ';
-		break;
-    case 4:
-		hundreds = 'четыресто ';
-		break;
-	case 5:
-		hundreds = 'пятьсот ';
-		break;
-    case 6:
-		hundreds = 'шестьсот ';
-		break;
-	case 7:
-		hundreds = 'семьсот ';
-		break;
-	case 8:
-		hundreds = 'восемьсот ';
-		break;
-    case 9:
-        hundreds = 'девятьсот ';
-        break;
-    default:
-        hundreds = '';
-}
-
-const answerNumberValue = hundreds + tens + units;
-
-    if (answerNumber < 0) {
-        answerNumberPrint = 'минус ' + answerNumberValue;
-        console.log(answerNumberPrint);
-    } else if (answerNumber > 0) {
-        answerNumberPrint = answerNumberValue;
-        console.log(answerNumberPrint);
-    } else {
-        answerNumberPrint = 0;
+    const d = Math.floor(Math.abs(answerNumber) / 100);
+    switch (d) {
+        case 1:
+            hundreds = 'сто ';
+            break;
+        case 2:
+            hundreds = 'двести ';
+            break;
+        case 3:
+            hundreds = 'триста ';
+            break;
+        case 4:
+            hundreds = 'четыресто ';
+            break;
+        case 5:
+            hundreds = 'пятьсот ';
+            break;
+        case 6:
+            hundreds = 'шестьсот ';
+            break;
+        case 7:
+            hundreds = 'семьсот ';
+            break;
+        case 8:
+            hundreds = 'восемьсот ';
+            break;
+        case 9:
+            hundreds = 'девятьсот ';
+            break;
+        default:
+            hundreds = '';
     }
 
-    if (str = answerNumberPrint.length <= 20) {
-        answerNumberPrint = answerNumberPrint;
-    } else {
-        answerNumberPrint = answerNumber;
-    }
+    const answerNumberValue = hundreds + tens + units;
+
+        if (answerNumber < 0) {
+            answerNumberPrint = 'минус ' + answerNumberValue;
+        } else if (answerNumber > 0) {
+            answerNumberPrint = answerNumberValue;
+        } else {
+            answerNumberPrint = 0;
+        }
+
+        if (str = answerNumberPrint.length <= 20) {
+            answerNumberPrint = answerNumberPrint;
+        } else {
+            answerNumberPrint = answerNumber;
+        }
+
     start();
+    
 }
 
 // Отдельная функция для обработки чисел от -10 до -19 и от 10 до 19.
@@ -253,47 +251,47 @@ const answerNumberValue = hundreds + tens + units;
 let extraTens;
 
 function extraValue() {
-const e = Math.abs(answerNumber);
-switch (e) {
-    case 10:
-        extraTens = 'десять';
-        break;    
-    case 11:
-        extraTens = 'одиннадцать';
-        break;
-    case 12:
-        extraTens = 'двенадцать';
-        break;
-    case 13:
-        extraTens = 'тринадцать';
-        break;
-    case 14:
-        extraTens = 'четырнадцать';
-        break;
-    case 15:
-        extraTens = 'пятнадцать';
-        break;
-    case 16:
-        extraTens = 'шестнадцать';
-        break;
-    case 17:
-        extraTens = 'семнадцать';
-        break;
-    case 18:
-        extraTens = 'восемнадцать';
-        break;
-    case 19:
-        extraTens = 'девятнадцать';
-        break;
-    default:
-        extraTens = '';
-}
-
-    if (answerNumber < 0) {
-        answerNumberPrint = 'минус ' + extraTens;
-    } else {
-        answerNumberPrint = extraTens;
+    const e = Math.abs(answerNumber);
+    switch (e) {
+        case 10:
+            extraTens = 'десять';
+            break;    
+        case 11:
+            extraTens = 'одиннадцать';
+            break;
+        case 12:
+            extraTens = 'двенадцать';
+            break;
+        case 13:
+            extraTens = 'тринадцать';
+            break;
+        case 14:
+            extraTens = 'четырнадцать';
+            break;
+        case 15:
+            extraTens = 'пятнадцать';
+            break;
+        case 16:
+            extraTens = 'шестнадцать';
+            break;
+        case 17:
+            extraTens = 'семнадцать';
+            break;
+        case 18:
+            extraTens = 'восемнадцать';
+            break;
+        case 19:
+            extraTens = 'девятнадцать';
+            break;
+        default:
+            extraTens = '';
     }
+
+        if (answerNumber < 0) {
+            answerNumberPrint = 'минус ' + extraTens;
+        } else {
+            answerNumberPrint = extraTens;
+        }
     start();
 }
 
@@ -301,7 +299,7 @@ function start() {
     if (answerNumber === "") {
        answerNumber = "Поиграем {1F609}";
     } else {
-        answerNumber = Math.floor((parseInt(minValue) + parseInt(maxValue)) / 2);
+        answerNumber = Math.floor((minValue + maxValue) / 2);
         gameRun = true;
         answerField.innerText = `Сдаётся мне, что Вы загадали число ${answerNumberPrint } ?`;
     }
@@ -320,72 +318,74 @@ document.querySelector('#btnRetry').addEventListener('click', function() {
     start();
 })
 
-// Кнопка "Больше".
+// Кнопка "Больше".  !!! Внесены изменения - кажется заработала как нужно !!!
 
 document.querySelector('#btnOver').addEventListener('click', function () {
-    const phraseRandom = Math.round(Math.random() * 2);
     if (gameRun){
-        if (Math.floor((parseInt(minValue) + parseInt(maxValue)) / 2) < numberInputMax.value) {
+        if (minValue === maxValue){
+            gameRun = false;
+        } else {   
             minValue = answerNumber + 1;
-            answerNumber = Math.floor((parseInt(minValue) + parseInt(maxValue)) / 2);
+            answerNumber = Math.floor((minValue + maxValue) / 2);
             orderNumber++;
             orderNumberField.innerText = orderNumber;
             compare();
-        } if (phraseRandom === 0) {
-            answerField.innerText = `Это было проще простого - Вы загадали число ${answerNumberPrint } ?`;  
-        } else if (phraseRandom === 1) {
-            answerField.innerText = `Тогда я думаю что это число ${answerNumberPrint } ?`;
-        } else { 
-            answerField.innerText = `Что же это за число такое? Неужели ${answerNumberPrint } ?`;
+            const phraseRandom = Math.round(Math.random() * 2);
+            if (phraseRandom === 0) {
+                answerField.innerText = `Это было проще простого - Вы загадали число ${answerNumberPrint } ?`;  
+            } else if (phraseRandom === 1) {
+                answerField.innerText = `Тогда я думаю что это число ${answerNumberPrint } ?`;
+            } else { 
+                answerField.innerText = `Что же это за число такое? Неужели ${answerNumberPrint } ?`;
+            }
         }
         
     }
 })
 
-// Кнопка "Меньше".
+// Кнопка "Меньше".  !!! Внесены изменения. Кажется работает !!!
 
 document.querySelector('#btnLess').addEventListener('click', function () {
-    const phraseRandom = Math.round(Math.random() * 2);
-    const phraseNumber = (phraseRandom !== 0) ? (phraseRandom < 2) ? 1 : 2 : 0 ;
     if (gameRun){
-        if (Math.floor((parseInt(minValue) + parseInt(maxValue)) / 2) > numberInputMin.value) {
+        if ((maxValue === minValue) || Math.floor((minValue + maxValue) / 2) <= numberInputMin.value) {
+            gameRun = false;
+        } else {
             maxValue = answerNumber - 1;
-            answerNumber = Math.floor((parseInt(minValue) + parseInt(maxValue)) / 2);
+            answerNumber = Math.floor((minValue + maxValue) / 2);
             orderNumber++;
             orderNumberField.innerText = orderNumber;
             compare();
-        } if (phraseNumber === 0) {
-            const answerPhrase = `Это было проще простого - Вы загадали число ${answerNumberPrint } ?`;
-            answerField.innerText = answerPhrase;
-        } else if (phraseNumber === 1) {
-            answerPhrase = `Может быть это число ${answerNumberPrint } ?`;
-            answerField.innerText = answerPhrase;
-        } else {
-            answerPhrase = `Что же это за число такое? Неужели ${answerNumberPrint } ?`;
-            answerField.innerText = answerPhrase;
+            const phraseRandom = Math.round(Math.random() * 2);
+            const phraseNumber = (phraseRandom !== 0) ? (phraseRandom < 2) ? 1 : 2 : 0 ;
+            if (phraseNumber === 0) {
+                const answerPhrase = `Это было проще простого - Вы загадали число ${answerNumberPrint } ?`;
+                answerField.innerText = answerPhrase;
+            } else if (phraseNumber === 1) {
+                answerPhrase = `Может быть это число ${answerNumberPrint } ?`;
+                answerField.innerText = answerPhrase;
+            } else {
+                answerPhrase = `Что же это за число такое? Неужели ${answerNumberPrint } ?`;
+                answerField.innerText = answerPhrase;
+            }
         }
+
     }
 })
 
 // Кнопка "Верно!".
 
 document.querySelector('#btnEqual').addEventListener('click', function () {
-    if (gameRun){
-            const phraseRandom = Math.round(Math.random() * 2);
-        if (phraseRandom === 0) {
-            const answerPhrase = `Вы очень сильный соперник \u{1F64C} !`;
-            answerField.innerText = answerPhrase;
-            gameRun = false;   
-        } else if (phraseRandom === 1) {
-            answerPhrase = `Когда-нибудь и Вам повезёт... \u{1F92A} ?`;
-            answerField.innerText = answerPhrase;
-            gameRun = false;
-        } else { 
-            answerField.innerText = `Я не всегда угадываю \u{1F925} .`;
-            gameRun = false;
-        }
-
+    const phraseRandom = Math.round(Math.random() * 2);
+    if (phraseRandom === 0) {
+        const answerPhrase = `Вы очень сильный соперник \u{1F64C} !`;
+        answerField.innerText = answerPhrase;
+        gameRun = false;   
+    } else if (phraseRandom === 1) {
+        answerPhrase = `Когда-нибудь и Вам повезёт... \u{1F92A} ?`;
+        answerField.innerText = answerPhrase;
+        gameRun = false;
+    } else { 
+        answerField.innerText = `Я не всегда угадываю \u{1F925} .`;
+        gameRun = false;
     }
 })
-
-// The End.
